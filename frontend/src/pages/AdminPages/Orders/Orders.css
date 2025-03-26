@@ -1,0 +1,60 @@
+.orders {
+  padding: 2% 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.orders-box {
+  min-height: 60vh;
+  border: 1px solid rgb(206, 206, 206);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 10px;
+}
+
+.orders-box .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.orders-box .card:hover {
+  box-shadow: 0px 0px 13px 1px gray;
+}
+
+.orders-box .card img {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.id-p {
+  width: 130px;
+  /* background-color: red; */
+  word-wrap: break-word; /* Ensures long words break to the next line */
+  overflow-wrap: break-word; /* Alternative to force text wrapping */
+  white-space: normal; /* Allows wrapping */
+  font-size: 10px;
+}
+
+.order-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.order-buttons .order-btn {
+  padding: 4px;
+  border: 10px;
+  background-color: black;
+  color: white;
+}
+
+.order-btn.active-btn {
+  background-color: green;
+}
