@@ -1,7 +1,6 @@
 import Navbar from '../../../Components/User/Navbar/Navbar';
 import './ProductsByCategory.css';
 import { useState, useEffect } from 'react';
-import Button from '../../../Components/Button/Button';
 import axios from '../../../utils/axios';
 
 const ProductsByCategory = () => {
