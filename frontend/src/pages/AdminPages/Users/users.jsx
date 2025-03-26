@@ -1,5 +1,5 @@
 import './users.css';
-import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/Navbar-Admin';
+import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/navbar-admin';
 
 const Users = () => {
   return (

@@ -1,5 +1,5 @@
 import './products-admin.css';
-import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/Navbar-Admin';
+import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/navbar-admin';
 import { useState, useEffect } from 'react';
 import axios from '../../../utils/axios';
 import Button from '../../../Components/Button/Button';

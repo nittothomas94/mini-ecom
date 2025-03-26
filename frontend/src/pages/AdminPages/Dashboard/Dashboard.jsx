@@ -1,6 +1,6 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
-import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/Navbar-Admin';
+import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/navbar-admin';
 const Dashboard = () => {
   return (
     <div className="dashboard-container">

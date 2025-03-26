@@ -1,5 +1,5 @@
 import './edit-product.css';
-import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/Navbar-Admin';
+import NavbarAdmin from '../../../Components/Admin/Navbar-Admin/navbar-admin';
 import Input from '../../../Components/Input/Input';
 import Button from '../../../Components/Button/Button';
 import { useEffect, useState } from 'react';
