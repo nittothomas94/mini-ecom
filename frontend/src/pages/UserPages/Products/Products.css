@@ -56,7 +56,10 @@
 }
 
 .empty-products {
-  margin: 4% 50%;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .empty-products img {

@@ -39,17 +39,16 @@ const Products = () => {
   return (
     <>
       <Navbar />
-
-      <div className="products">
-        {products.length < 1 ? (
-          <div className="empty-products">
-            <img
-              src="/Images/main/no-products-found.png"
-              alt="no products found"
-            />
-          </div>
-        ) : (
-          products.map(item => {
+      {products.length < 1 ? (
+        <div className="empty-products">
+          <img
+            src="/Images/main/no-products-found.png"
+            alt="no products found"
+          />
+        </div>
+      ) : (
+        <div className="products">
+          {products.map(item => {
             return (
               <div key={item._id} className="product-card">
                 <img src={item.imageurl} alt="product Image" />
@@ -65,9 +64,10 @@ const Products = () => {
                 </Button>
               </div>
             );
-          })
-        )}
-      </div>
+          })}
+        </div>
+      )}
+
       <ToastContainer />
     </>
   );

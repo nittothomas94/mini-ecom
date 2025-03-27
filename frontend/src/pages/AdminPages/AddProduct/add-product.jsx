@@ -5,6 +5,7 @@ import Button from '../../../Components/Button/Button';
 import { useState } from 'react';
 import axios from '../../../utils/axios';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -39,8 +40,10 @@ const AddProduct = () => {
       } else {
         console.error('Image URL missing in response:', response.data);
       }
+      toast.success('Image added successfully!');
     } catch (e) {
       console.log('image upload failed', e);
+      toast.error('Failed to add product. Try again later.');
     }
   };
 
@@ -56,6 +59,7 @@ const AddProduct = () => {
   return (
     <>
       <NavbarAdmin />
+      <ToastContainer />
       <div className="add-product-container">
         <Input
           className="input-class"
