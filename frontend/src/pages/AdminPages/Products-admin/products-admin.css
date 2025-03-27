@@ -35,3 +35,7 @@
   transform: scale(1.2);
   color: rgb(45, 218, 45);
 }
+
+.loadingCard {
+  margin: 20px 20%;
+}

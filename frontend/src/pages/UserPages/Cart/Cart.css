@@ -130,6 +130,10 @@
   transform: scale(1.2);
 }
 
+.loading-card {
+  margin: 30px 20%;
+}
+
 @media (max-width: 1024px) {
   .cart {
     margin: 20px;

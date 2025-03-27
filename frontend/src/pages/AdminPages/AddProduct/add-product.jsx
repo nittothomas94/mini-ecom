@@ -15,6 +15,7 @@ const AddProduct = () => {
     category: '',
     imageurl: '',
   });
+  const [imagethere, setImgagethere] = useState(false);
 
   const navigate = useNavigate();
 
@@ -41,6 +42,7 @@ const AddProduct = () => {
         console.error('Image URL missing in response:', response.data);
       }
       toast.success('Image added successfully!');
+      setImgagethere(true);
     } catch (e) {
       console.log('image upload failed', e);
       toast.error('Failed to add product. Try again later.');
@@ -49,9 +51,21 @@ const AddProduct = () => {
 
   const onClick = async () => {
     try {
-      console.log(product);
-      await axios.post('/product', product);
-      navigate('/admin/products');
+      if (imagethere) {
+        console.log(product);
+        await axios.post('/product', product);
+        navigate('/admin/products');
+      } else {
+        toast.warn('Wait! The image is being uploaded.', {
+          position: 'top-right',
+          autoClose: 3000, // Message disappears after 3 seconds
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
     } catch (e) {
       console.log(e.message);
     }

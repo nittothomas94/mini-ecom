@@ -4,13 +4,16 @@ import { useState, useEffect } from 'react';
 import Button from '../../../Components/Button/Button';
 import axios from '../../../utils/axios';
 import { ToastContainer, toast } from 'react-toastify';
+import CardSklton from '../../../Components/CardSkelton/CardSkelton';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getProducts = async () => {
     const response = await axios.get('/product');
     setProducts(response.data);
+    setLoading(false);
   };
 
   console.log(products);
@@ -39,34 +42,32 @@ const Products = () => {
   return (
     <>
       <Navbar />
-      {products.length < 1 ? (
-        <div className="empty-products">
-          <img
-            src="/Images/main/no-products-found.png"
-            alt="no products found"
-          />
-        </div>
-      ) : (
-        <div className="products">
-          {products.map(item => {
-            return (
-              <div key={item._id} className="product-card">
-                <img src={item.imageurl} alt="product Image" />
-                <h1>{item.name}</h1>
-                <p>{item.description}</p>
-                <p>₹{item.price}</p>
-                <Button
-                  text="Add to Cart"
-                  className="add-to-cart"
-                  onClick={() => onClick(item._id)}
-                >
-                  <i className="material-icons">shopping_cart</i>
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-      )}
+
+      <div className="products">
+        {loading ? (
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => <CardSklton />)
+        ) : (
+          <>
+            {products.map(item => {
+              return (
+                <div key={item._id} className="product-card">
+                  <img src={item.imageurl} alt="product Image" />
+                  <h1>{item.name}</h1>
+                  <p>{item.description}</p>
+                  <p>₹{item.price}</p>
+                  <Button
+                    text="Add to Cart"
+                    className="add-to-cart"
+                    onClick={() => onClick(item._id)}
+                  >
+                    <i className="material-icons">shopping_cart</i>
+                  </Button>
+                </div>
+              );
+            })}
+          </>
+        )}
+      </div>
 
       <ToastContainer />
     </>
